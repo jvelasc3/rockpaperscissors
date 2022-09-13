@@ -20,3 +20,17 @@ function getPlayerChoice() {
     }
   }
 }
+
+function win_lose_tie(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    return "Tie";
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    return "Player";
+  } else {
+    return "Computer";
+  }
+}
