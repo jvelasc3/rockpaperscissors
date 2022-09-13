@@ -34,3 +34,14 @@ function win_lose_tie(playerSelection, computerSelection) {
     return "Computer";
   }
 }
+
+function playRound(playerSelection, computerSelection) {
+  const response = checkRound(playerSelection, computerSelection);
+  if (response === "Tie") {
+    return "Tie Game";
+  } else if (response === "Player") {
+    return `Player Wins ${playerSelection} beats ${computerSelection}`;
+  } else {
+    return `Player loses! ${computerSelection} beats ${playerSelection}`;
+  }
+}
