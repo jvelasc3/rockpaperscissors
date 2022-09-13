@@ -15,7 +15,7 @@ function getPlayerChoice() {
     }
     const choiceLower = choice.toLowerCase();
     if (options.includes(choiceLower)) {
-      validatedInput = true;
+      errorInput = true;
       return choiceLower;
     }
   }
@@ -36,7 +36,7 @@ function win_lose_tie(playerSelection, computerSelection) {
 }
 
 function playRound(playerSelection, computerSelection) {
-  const response = checkRound(playerSelection, computerSelection);
+  const response = win_lose_tie(playerSelection, computerSelection);
   if (response === "Tie") {
     return "Tie Game";
   } else if (response === "Player") {
@@ -45,3 +45,37 @@ function playRound(playerSelection, computerSelection) {
     return `Player loses! ${computerSelection} beats ${playerSelection}`;
   }
 }
+
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (let i = 0; i < 5; i++) {
+    if (i == 0) {
+      console.log("Round 1");
+    } else if (i === 4) {
+      console.log("Last Round");
+    }
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+    console.log("---------------");
+
+    if (win_lose_tie(playerSelection, computerSelection) === "Player") {
+      playerScore++;
+    } else if (
+      win_lose_tie(playerSelection, computerSelection) === "Computer"
+    ) {
+      computerScore++;
+    }
+  }
+  if (playerScore > computerScore) {
+    console.log(`Player won by ${playerScore} out of 5`);
+  } else if (playerScore < computerScore) {
+    console.log(`Computer won by ${computerScore} out of 5`);
+  } else {
+    console.log("Tie Game!");
+  }
+}
+
+game();
