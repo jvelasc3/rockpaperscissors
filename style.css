@@ -12,3 +12,15 @@
   line-height: 30px;
   width: 150px;
 }
+
+#playerText {
+  color: aqua;
+}
+
+#computerText {
+  color: yellow;
+}
+
+#resultText {
+  color: beige;
+}
