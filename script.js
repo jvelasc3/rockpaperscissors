@@ -26,7 +26,10 @@ choiceBtns.forEach((button) =>
     computerScoreText.textContent = `Computer Score: ${computerScore}`;
     tieScoreText.textContent = `Tie Score: ${tieScore}`;
     i++;
-    if (i !== 5) {
+    if (i !== 6) {
+      console.log(playerScore);
+      console.log(computerScore);
+      console.log(tieScore);
     } else {
       whoWon();
       reset();
