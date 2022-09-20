@@ -27,9 +27,6 @@ choiceBtns.forEach((button) =>
     tieScoreText.textContent = `Tie Score: ${tieScore}`;
     i++;
     if (i !== 5) {
-      console.log(playerScore);
-      console.log(computerScore);
-      console.log(tieScore);
     } else {
       whoWon();
       reset();
