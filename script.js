@@ -25,8 +25,9 @@ choiceBtns.forEach((button) =>
     playerScoreText.textContent = `Player Score: ${playerScore}`;
     computerScoreText.textContent = `Computer Score: ${computerScore}`;
     tieScoreText.textContent = `Tie Score: ${tieScore}`;
+
     i++;
-    if (i !== 5) {
+    if (i < 5) {
     } else {
       whoWon();
       reset();
@@ -86,10 +87,23 @@ function reset() {
 
 function whoWon() {
   if (playerScore > computerScore) {
-    alert("Game Over! Player Wins");
+    alert(
+      `Player Wins! Final Score:
+        Player Score: ${playerScore} 
+        Computer Score: ${computerScore}
+        Tie Score: ${tieScore}`
+    );
   } else if (playerScore < computerScore) {
-    alert("Game Over! Computer Wins");
+    alert(
+      `Computer Wins! Final Score:
+        Player Score: ${playerScore} 
+        Computer Score: ${computerScore}
+        Tie Score: ${tieScore}`
+    );
   } else {
-    alert("Tie Game!");
+    alert(`Tie Game! Final Score:
+      Player Score: ${playerScore} 
+      Computer Score: ${computerScore}
+      Tie Score: ${tieScore}`);
   }
 }

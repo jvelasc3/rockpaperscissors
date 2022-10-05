@@ -4,6 +4,8 @@
   border: 3px solid;
   border-radius: 25px;
   padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .choiceBtns {
